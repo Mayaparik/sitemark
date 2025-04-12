@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import Blog from './Blog'
 import Signup from './auth/Signup'
-import SignIn from './auth/SignIn'
+import SignIn from './auth/Signin'
 import Footer  from './Footer'
 
 
