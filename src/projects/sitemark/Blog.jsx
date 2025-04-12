@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import data from './data'
-import Card from './card'
+import Card from './Card'
 import dataTwo from './datatwo'
 import Card2 from './Card2'
 import avatar1 from './image/avatar1.png'
