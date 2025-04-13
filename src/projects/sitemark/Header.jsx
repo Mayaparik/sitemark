@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import logo from './image/logo.png'
 import SignButtons from './auth/SignButtons'
+import { useNavigate } from 'react-router-dom'
 
 
 function Header() {
-
+      
     const [isOPen, setIsOpen] = useState(false)
-
+   let navigate = useNavigate()
     return (
         <section className="lg:px-14 px-6">
             <header className="fixed top-7 left-0 w-full  lg:px-14 px-6  z-50 shadow-2xl">
@@ -52,9 +53,14 @@ function Header() {
                         </nav>
                         {/* <!-- Sign-in & Sign-up Buttons (Mobile) -->  */}
                         <div class="mt-4 flex flex-col space-y-2">
-                            <button className="px-4 py-2 text-sm font-medium hover:bg-[#333b4d] rounded-lg">Sign in</button>
-                            <button
-                                className="px-4 py-2 text-sm font-medium bg-[#f5f6fa] text-black hover:bg-[#c8cedc] rounded-lg">Sign
+                            <button type='button' 
+                            className="px-4 py-2 text-sm font-medium hover:bg-[#333b4d] rounded-lg"
+                            onClick={() => navigate("signin")}
+                            >Sign in</button>
+                            <button type='button'
+                                className="px-4 py-2 text-sm font-medium bg-[#f5f6fa] text-black hover:bg-[#c8cedc] rounded-lg"
+                                onClick={() => navigate("signup")}
+                                >Sign
                                 up</button>
                         </div>
                     </div>
