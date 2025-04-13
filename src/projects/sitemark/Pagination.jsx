@@ -5,7 +5,7 @@ function Pagination() {
     return (
         <div className='py-10'>
             <nav>
-                <ul className="flex justify-start gap-2">
+                <ul className="flex justify-start lg:gap-2 gap-1">
                     <li><Link to="1"
                         className=" bg-white !text-black font-bold rounded-full px-3 py-1 transition-all duration-200">1</Link>
                     </li>
