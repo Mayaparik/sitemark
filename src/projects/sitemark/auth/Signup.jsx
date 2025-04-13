@@ -33,7 +33,7 @@ function Signup() {
 
     return (
         <section className="text-white py-30 md:px-0 px-7 bg-radial-[at_10%] from-slate-950 via-slate-900 to-slate-950 to-90% ">
-            <div className="bg-slate-950 border border-[#333b4d99] shadow-md shadow-slate-900 rounded-lg px-8 py-8 lg:w-4/12 md:w-6/12 w-full space-y-4 m-auto transition-shadow ">
+            <div className="grid bg-slate-950 border border-[#333b4d99] shadow-md shadow-slate-900 rounded-lg px-8 py-8 lg:w-4/12 md:w-6/12 w-full space-y-4 m-auto transition-shadow ">
                 <img src={logo} alt="" className="w-[28%]" />
                 <h1 className="text-4xl font-semibold">Sign up</h1>
                 <form className='space-y-4' method='POST' onSubmit={handleSubmit}>

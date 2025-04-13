@@ -28,6 +28,7 @@ function Footer() {
                         <div>
                             <ul className="space-y-1">
                                 <li><Link to="product" className="!text-white font-bold text-sm">Product</Link></li>
+                                
                                 <li>
                                     <Link to="features" className="relative !text-slate-500 font-bold pb-1 text-sm group">
                                         Features

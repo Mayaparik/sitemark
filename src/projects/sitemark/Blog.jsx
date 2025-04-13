@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
 import data from './data'
 import Card from './Card'
 import dataTwo from './datatwo'
@@ -62,8 +64,7 @@ function Blog() {
                 <i className="bi bi-search absolute left-[13px] text-sm bottom-[11px]"></i>
               </div>
               <Link
-                className="border border-[#333b4d99] cursor-pointer hover:border-[#adb4c399] px-2 text-xs py-2 rounded-lg content-center"><i
-                  className="fa-solid fa-rss px-1"></i></Link>
+                className="border border-[#333b4d99] cursor-pointer hover:border-[#adb4c399] px-2 text-xs py-2 rounded-lg content-center"><FontAwesomeIcon icon={faRss} className="px-1 text-white" /></Link>
             </div>
           </div>
         </div>

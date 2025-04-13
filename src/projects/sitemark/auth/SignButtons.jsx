@@ -6,7 +6,7 @@ import Logout from './Logout'
 function SignButtons() {
   return (
     <div>
-      <ul className=" lg:flex justify-end  space-x-4">
+      <ul className=" flex flex-col lg:flex-row justify-end  space-x-4">
         <li
           className="px-3 py-2 text-sm font-medium cursor-pointer hover:bg-[#333b4d] text-[#f5f6fa] rounded-lg">
           {
