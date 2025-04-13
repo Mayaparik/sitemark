@@ -11,8 +11,8 @@ function Header() {
     const [isOPen, setIsOpen] = useState(false)
     let navigate = useNavigate()
     return (
-        <section className="lg:px-14 px-6">
-            <header className="fixed top-7 left-0 w-full  lg:px-14 px-6  z-50 shadow-2xl">
+        <section className="">
+            <header className="fixed top-7 left-0 w-full  lg:px-14 px-6 z-50 shadow-2xl">
                 <div
                     className="grid grid-cols-2 justify-between bg-black/90 rounded-2xl px-4 py-2 items-center border border-[#333b4d99]">
                     <div className="flex space-x-5 justify-start">
