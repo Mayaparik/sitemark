@@ -34,7 +34,7 @@ function SignIn() {
                 <form className='space-y-4' method='POST' onSubmit={handleSubmit}>
                     <div className="space-y-2">
                         <p className="text-[#dbe1ef99] font-medium text-sm">Email</p>
-                        <input placeholder="Your@email.com" type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
+                        <input placeholder="Your@email.com"  type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
                             className="text-sm bg-black border px-3 mx-0 py-2 border-[#333b4d99] focus:outline-2 focus:outline-sky-700 rounded-lg w-full" />
                     </div>
                     <div className="space-y-2 relative">

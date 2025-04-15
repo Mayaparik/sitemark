@@ -9,14 +9,12 @@ import Card2 from './Card2'
 import avatar1 from './image/avatar1.png'
 import avatar2 from './image/avatar2.png'
 import avatar3 from './image/avatar3.png'
-import avatar4 from './image/avatar4.png'
 import avatar5 from './image/avatar5.png'
 import avatar6 from './image/avatar6.png'
 import avatar7 from './image/avatar7.png'
 import hero1 from './image/hero1.png'
 import hero2 from './image/hero2.png'
-import hero3 from './image/pic1.png'
-import hero4 from './image/pic2.png'
+
 import Pagination from './Pagination'
 
 function Blog() {
@@ -39,22 +37,14 @@ function Blog() {
                   className="px-3 py-1 text-[13px] font-medium hover:bg-[#161d2efa] border border-[#333b4d99] text-[#f5f6fa] rounded-2xl">
                   <Link to='/' style={{ color: "#f5f6fa" }}>All categories</Link>
                 </li>
-                <li
+                {
+                  ["Company", "Product", "Design", "Engineering"].map((list) => (
+                <li key={list}
                   className="px-3 py-1 text-[13px] font-medium hover:bg-[#161d2efa] text-[#f5f6fa] rounded-2xl">
-                  <Link to='company' style={{ color: "#f5f6fa" }}>Company</Link>
+                  <Link  style={{ color: "#f5f6fa" }}>{list}</Link>
                 </li>
-                <li
-                  className="px-3 py-1 text-[13px] font-medium hover:bg-[#161d2efa] text-[#f5f6fa] rounded-2xl">
-                  <Link to='product' style={{ color: "#f5f6fa" }}>Product</Link>
-                </li>
-                <li
-                  className="px-3 py-1 text-[13px] font-medium hover:bg-[#161d2efa] text-[#f5f6fa] rounded-2xl">
-                  <Link to='design' style={{ color: "#f5f6fa" }}>Design</Link>
-                </li>
-                <li
-                  className="px-3 py-1 text-[13px] font-medium hover:bg-[#161d2efa] text-[#f5f6fa] rounded-2xl">
-                  <Link to='engineering' style={{ color: "#f5f6fa" }} >Engineering</Link>
-                </li>
+                  ))
+                }
               </ul>
             </div>
             <div className=" flex lg:justify-end space-x-2 lg:order-2 order-1 ">
