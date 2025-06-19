@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../sitemark/image/logo.png'
 
@@ -15,9 +16,14 @@ function Signup() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        localStorage.setItem("fullname", fullName)
-        localStorage.setItem("email", email)
-        localStorage.setItem("password", password)
+        let formData = {username: fullName, email: email, mobile: mobile, password: password}
+        axios.post("https://680397fc0a99cb7408ec75af.mockapi.io/users", formData)
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error.messsage)
+        )
+        // localStorage.setItem("fullname", fullName)
+        // localStorage.setItem("email", email)
+        // localStorage.setItem("password", password)
 
         alert('You have successfully logged in ')
 

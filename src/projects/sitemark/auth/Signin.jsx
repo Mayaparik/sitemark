@@ -1,29 +1,69 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../sitemark/image/logo.png'
+import axios from 'axios'
 
 function SignIn() {
 
+
+    // const [userFindDb, setuserFindDb] = useState(false)
+    const [userFinding, setUserFinding] = useState({})
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState("")
+    const [usersData, setUsersData] = useState([])
     let navigate = useNavigate()
 
-    function handleSubmit(e){
-        e.preventDefault()         
-        if (localStorage.getItem("email")=== email && localStorage.getItem("password") === password){
-            alert('You have successfully logged in ')  
-             let username = localStorage.getItem("fullName")                 
-             localStorage.setItem("username", username)
-            navigate("/")
-            window.location.reload();
+   useEffect(() => {
+     axios.get("https://680397fc0a99cb7408ec75af.mockapi.io/users")
+     .then((response) => {
+        console.log(response.data);
+        setUsersData(response.data)
+        
+     })
+     .catch((error) => {
+        console.log(error);
+        
+     })
+   }, [])
 
-        }else{
-           alert("invalid password")
-        }            
-      }
+   let userFindDb;
+   function handleSubmit(e){
+         e.preventDefault()
+        userFindDb = usersData.some((usr) => {
+           usr.username === fullname && usr.password === password
+         })
+         usersData.map((usr) => {
+        if( usr.email === email && usr.password === password){
+            setUserFinding(usr)  
+            navigate("/")
+        }
+        console.log(userFindDb);
+        })  
+  console.log(usersData);
+  
+  
+
+    }
+    console.log(userFinding);
+
+    
+
+    // function handleSubmit(e){
+    //     e.preventDefault()         
+    //     if (localStorage.getItem("email")=== email && localStorage.getItem("password") === password){
+    //         alert('You have successfully logged in ')  
+    //          let username = localStorage.getItem("fullName")                 
+    //          localStorage.setItem("username", username)
+    //         navigate("/")
+    //         window.location.reload();
+
+    //     }else{
+    //        alert("invalid password")
+    //     }            
+    //   }
 
 
     return (
@@ -42,7 +82,7 @@ function SignIn() {
                         <input type={showPassword ? "text" : "password"} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder=". . . . . ."
                             className="bg-black text-sm border px-2 py-2 border-[#333b4d99] rounded-lg w-full focus:outline-2 focus:outline-sky-700" />
                         <div className='absolute top-[34px] right-[17px]'>
-                            <button onClick={() => setShowPassword(!showPassword)} type='button'>{showPassword ? (<i class="bi bi-eye"></i>) : (<i className="bi bi-eye-slash"></i>)}</button>
+                            <button onClick={() => setShowPassword(!showPassword)} type='button'>{showPassword ? (<i className="bi bi-eye"></i>) : (<i className="bi bi-eye-slash"></i>)}</button>
                         </div>
                     </div>
                     <div className="space-y-3">

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
+
 function Header() {
 
     const [isOPen, setIsOpen] = useState(false)
@@ -15,7 +16,7 @@ function Header() {
         <section className="">
             <header className="fixed top-7 left-0 w-full lg:px-10 px-4 z-50 shadow-2xl ">
                 <div
-                    className="grid grid-cols-2 justify-between bg-black/90 rounded-2xl px-4 py-2 items-center border border-[#333b4d99]">
+                    className="grid grid-cols-2 justify-between backdrop-blur-sm rounded-2xl px-4 py-2 items-center border border-[#333b4d99]">
                     <div className="flex space-x-5 justify-start">
                         <div className="content-center min-w-[100px]">
                             <img src={logo} alt="" />
@@ -30,7 +31,7 @@ function Header() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </div>                        
                     </div >
                     <div className='lg:block hidden'>
                         <SignButtons />
@@ -41,6 +42,7 @@ function Header() {
                         </button>
                     </div>
                 </div>
+
                 {isOPen && (
                     <div className='mx-2'>
                         <div className="bg-black/90 mt-3 rounded-lg py-4 lg:hidden flex-wrap">
