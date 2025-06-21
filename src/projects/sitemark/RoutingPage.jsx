@@ -9,7 +9,6 @@ import Pricing from './Pricing'
 import Features from './Features'
 import Testimonial from './Testimonial'
 import Faq from './Faq'
-// import Highlights from './HighlightsHeader'
 import HighlightsHeader from './HighlightsHeader'
 
 
